@@ -28,24 +28,6 @@ public class MainActivity extends AppCompatActivity {
         // creo Home Fragment all'avvio
         createHomeFragment();
 
-        //inflate delle view dal layout
-        Button buttonClickMe =(Button)findViewById(R.id.buttonClickMe);
-        final TextView myTextView = (TextView)findViewById(R.id.textViewHelloWorld);
-
-        //intercetto il click sul pulsante
-        buttonClickMe.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {                 //v è il nome della variabile
-
-                Log.d("CISITA", "onClick event called!");
-
-                conta++;
-                myTextView.setText("Hai premuto "+ String.valueOf(conta)+" volte");
-
-                //cambio activity
-                GoToSecondActivity();
-            }
-        });
     }
 
     private void GoToSecondActivity() {
