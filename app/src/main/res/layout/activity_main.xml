@@ -6,26 +6,11 @@
     android:orientation="horizontal"
     android:background="@color/backgroundColor">
 
-    <!-- CONTENUTO DEL NOSTRO LAYOUT
-    wrap_content = dimensione del contenuto
-    -->
-    <TextView
-        android:id="@+id/textViewHelloWorld"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/testo_name"
-        android:layout_below="@+id/buttonClickMe"
-        android:layout_alignEnd="@+id/buttonClickMe"
-        android:layout_marginTop="20dp">
-    </TextView>
 
-    <Button
-        android:id="@+id/buttonClickMe"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button_name"
-        android:layout_centerInParent="true"
-        android:textStyle="bold">
-    </Button>
+    <!-- DIchiariamo un frame layout per mostrare i vari fragment -->
+    <FrameLayout
+        android:id="@+id/FrameLayoutCountainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </RelativeLayout>

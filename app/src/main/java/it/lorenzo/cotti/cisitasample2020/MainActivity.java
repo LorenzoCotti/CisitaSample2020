@@ -1,6 +1,7 @@
 package it.lorenzo.cotti.cisitasample2020;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +9,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import it.lorenzo.cotti.cisitasample2020.fragments.HomeFragment;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -21,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
 
         //definire quale layout deve mostrare la nostra schermata
         setContentView(R.layout.activity_main);
+
+        // creo Home Fragment all'avvio
+        createHomeFragment();
 
         //inflate delle view dal layout
         Button buttonClickMe =(Button)findViewById(R.id.buttonClickMe);
@@ -45,6 +51,21 @@ public class MainActivity extends AppCompatActivity {
     private void GoToSecondActivity() {
         Intent intent = new Intent(this, SecondActivity.class);
         startActivity(intent);
+    }
+
+    //creo e instanzio un fragment all'avvio dell'applicazione
+    private void createHomeFragment() {
+
+        //creo una istanza del Home Fragment
+        HomeFragment homeFragment = new HomeFragment();
+
+        //inizio una transizione per aggiungere il fragment tramite il Fragment Manager ottenuto dall'activity
+        FragmentTransaction transaction = this.getSupportFragmentManager().beginTransaction();
+
+        //aggiungo la istanza di fragment  al framelayout contenuto in activity_ main.layout e associo un TAG
+        transaction.add(R.id.FrameLayoutCountainer, homeFragment, "HOME_FRAGMENT");
+
+        transaction.commit();
     }
 
     @Override
