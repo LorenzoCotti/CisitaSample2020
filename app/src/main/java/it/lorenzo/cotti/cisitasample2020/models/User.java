@@ -1,5 +1,6 @@
 package it.lorenzo.cotti.cisitasample2020.models;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class User extends Object {
@@ -10,4 +11,11 @@ public class User extends Object {
     public Date date;
     public boolean visible = true;
 
+    public User() {
+
+    }
+
+    public String getFullName() {
+        return name + " " + surname;
+    }
 }
